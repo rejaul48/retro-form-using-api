@@ -1,5 +1,6 @@
 
 
+// all videos api and search by query api fetch here
 const allVideosApiHandle = async (userInputValue) => {
 
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts${userInputValue ? `?category=${userInputValue}` : ''}`);
@@ -9,6 +10,7 @@ const allVideosApiHandle = async (userInputValue) => {
 
 }
 
+// all videos loader function and search by filter functionality
 const allVideosLoader = (posts) => {
 
     const mainContainer = document.getElementById('allPostMainContainer');
@@ -69,7 +71,7 @@ const allVideosLoader = (posts) => {
 };
 
 
-
+// click to envelop icon to add description into right side and counter increase functionality
 const addToMark = (description, views) => {
 
     const detailsContainer = document.getElementById('details_card_right');
@@ -96,7 +98,7 @@ const addToMark = (description, views) => {
 }
 
 
-
+// user input handle here
 const userInputHandle = () => {
     const userInput = document.getElementById('userInput').value;
 
@@ -105,7 +107,7 @@ const userInputHandle = () => {
 
 }
 
-// latest post api fetch 
+// latest all post api fetch here
 
 const latestPostApiFetch = async () =>{
 
@@ -116,6 +118,7 @@ const latestPostApiFetch = async () =>{
 
 }
 
+// latest videos loader using api
 const latestVideosLoader = (latestPosts) =>{
 
     const latestPostContainer = document.getElementById('latestPostContainer');
@@ -157,5 +160,7 @@ const latestVideosLoader = (latestPosts) =>{
 
 }
 
-allVideosApiHandle(); // api fetch function call here
-latestPostApiFetch() //latest post api fetch function call here
+// all videos loader using api function call here
+allVideosApiHandle();  
+// latest posted videos loader using api function call here
+latestPostApiFetch();
